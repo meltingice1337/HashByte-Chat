@@ -47,10 +47,6 @@ const ChatController = (io, db) => {
                 connectedUser.socket.emit('message', { username: user.username, message: m });
             })
         })
-
-        socket.on('my other event', function (data) {
-            console.log(data);
-        });
     });
 }
 
