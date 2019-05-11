@@ -5,9 +5,11 @@ const connectedUsers = [];
 const ChatController = (io, db) => {
 
     const findUserByToken = (token) => {
-        return db.get('users')
-            .find({ token })
-            .value();
+        return {
+            ...db.get('users')
+                .find({ token })
+                .value()
+        };
     }
 
     io.use(function (socket, next) {
