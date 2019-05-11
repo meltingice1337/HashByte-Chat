@@ -31,7 +31,7 @@ You can go to `backend/src/index.html` to see a working client example.
   - Uppon a user connecting to the server, a list will the names of all the users will be send on
   - Data e.g: `['alin', 'raul']`
 - `ON message`
-  - This is where the client will use `emit(`message', data)` to send a message to the other users
+  - This is where the client will use `emit('message', data)` to send a message to the other users
   - Data e.g: `'this is a message'` 
 - `EMIT message`
   - This is where the client will receive messages from other users.
