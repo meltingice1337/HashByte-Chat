@@ -26,7 +26,7 @@
     
 ### Socket IO Api Event Documentation  
 You can go to `backend/src/index.html` to see a working client example.
-- When connecting to the server socket send the token receivied as a query parameter.
+- When connecting to the server socket send the token receivied upon login as a query parameter.
 - `EMIT connectedUsers`
   - Uppon a user connecting to the server, a list will the names of all the users will be send on
   - Data e.g: `['alin', 'raul']`
@@ -35,4 +35,10 @@ You can go to `backend/src/index.html` to see a working client example.
   - Data e.g: `'this is a message'` 
 - `EMIT message`
   - This is where the client will receive messages from other users.
-  - Data e.g: `{user: 'alin', message: 'This is a message' }`
+  - Data e.g: `{user: 'alin', message: 'This is a message'}`
+- `EMIT userConnected`
+  - Whenever a new user is connected, all the other users will receive the name of the new user connected
+  - Data e.g: `{user: 'alin'}`
+- `EMIT userDisconnected`
+  - Whenever a user disconnected, all the other users will receive the name of the new user that disconnected
+  - Data e.g: `{user: 'alin'}`
