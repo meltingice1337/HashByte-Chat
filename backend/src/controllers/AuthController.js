@@ -27,11 +27,12 @@ const AuthController = (db) => {
                     username: req.body.username,
                     password: bcrypt.hashSync(req.body.password, 8)
                 }
-                const userId = db.get('users')
-                    .push(newUser)
-                    .write()[0].id
 
-                res.send({ userId });
+                db.get('users')
+                    .push(newUser)
+                    .write()
+
+                res.send({ id: newUser.id, username: newUser.username });
             } else {
                 next(new UserExistent());
             }
