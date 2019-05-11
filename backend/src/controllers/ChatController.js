@@ -37,9 +37,16 @@ const ChatController = (io, db) => {
 
         socket.emit('connectedUsers', connectedUsers.map(user => user.username));
 
+        connectedUsers
+            .filter(cu => cu.socket !== user.socket)
+            .forEach(cu => cu.socket.emit('userConnected', { user: user.username }))
+
         socket.on('disconnect', function () {
             const connectedUserIndex = connectedUsers.findIndex(connectedUser => connectedUser.socket.id == socket.id);
             connectedUsers.splice(connectedUserIndex, 1);
+
+            connectedUsers
+                .forEach(cu => cu.socket.emit('userDisconnected', { user: user.username }))
         })
 
         socket.on('message', function (m) {

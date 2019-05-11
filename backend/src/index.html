@@ -29,6 +29,16 @@
       document.querySelector('#messages').appendChild(message);
     });
 
+
+    socket.on('userConnected', function (user) {
+      console.log(user, 'connected');
+    })
+
+    socket.on('userDisconnected', function (user) {
+      console.log(user, 'disconnected');
+    })
+
+
     socket.on('error', err => console.log({ err }))
 
   }
