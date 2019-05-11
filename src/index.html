@@ -1,0 +1,48 @@
+<div>
+  token:
+  <input type="text" id="token">
+</div>
+<div>
+  <input type="text" id="message">
+</div>
+<div id="messages">
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+<script>
+  var socket = null;
+  function startSocket(t) {
+    console.log(t);
+    socket = io.connect('http://localhost', {
+      query: {
+        token: t
+      }
+    });
+
+    socket.on('connectedUsers', function (data) {
+      console.log({ data });
+    });
+
+    socket.on('message', function (data) {
+      const message = document.createElement('p');
+      message.innerText = `${data.username}: ${data.message}`;
+      document.querySelector('#messages').appendChild(message);
+    });
+
+    socket.on('error', err => console.log({ err }))
+
+  }
+
+  document.querySelector('#message').addEventListener('keyup', (e) => {
+    if (e.keyCode === 13) {
+      socket.emit('message', document.querySelector('#message').value);
+      document.querySelector('#message').value = '';
+    }
+  })
+
+  document.querySelector('#token').addEventListener('keyup', (e) => {
+    if (e.keyCode === 13) {
+      startSocket(document.querySelector('#token').value);
+    }
+  })
+</script>
