@@ -13,6 +13,9 @@
 - Express (framework aka library for dealing with http requests used for loggin/register) https://expressjs.com/
 - Socket.IO (framework for dealing with websockets aka real time communication used for chat) https://socket.io/
 - lowdb (local database (kind of like a txt file) using the JSON format and without needing to run a server like mysql/mongo in order to work) https://github.com/typicode/lowdb
+- uuid (library used to generate random long unique identifiers used for creating tokens) https://github.com/kelektiv/node-uuid
+- bcrypt (library used to generate and verify password hashes) https://github.com/dcodeIO/bcrypt.js#readme
+- shortid (library used for creating id's used for identyfing database entities) https://github.com/dylang/shortid
 
 
 #### Database
