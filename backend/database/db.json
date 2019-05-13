@@ -12,6 +12,29 @@
       "username": "raul",
       "password": "$2b$08$TXehD8w/SwRHmkeZ8K8IgeMgG4nDDIa4JDk97gOslKq.B4efqJu2W",
       "token": "338c5427-4f0a-4025-af7a-gerw"
+    },
+    {
+      "id": "Ynp9cJwOk",
+      "username": "asd",
+      "password": "$2b$08$YKcjo65bGZruD/YqBGqXtuF8f6ULm8riZGuwDvdZ4QrUUT6fUpmse",
+      "token": "db2d8c8a-19df-4e8a-a420-df72508d229c"
+    },
+    {
+      "id": "RQnyEkkub",
+      "username": "asd2",
+      "password": "$2b$08$.sv0LlJL4Cxj7hOG0/uqp.NJQruTpxMePare8nkFt7SHCGpeN5Dsm"
+    },
+    {
+      "id": "WNC42x6wG",
+      "username": "r",
+      "password": "$2b$08$O9CSg1O8fhhSs59IwRjc6ObIXfhv47vAwYdHw2OmRmYsbGDh.ejFO",
+      "token": "06750053-cc42-4d81-8a99-a659767c5f7f"
+    },
+    {
+      "id": "f9k3gHwou",
+      "username": "robi",
+      "password": "$2b$08$h3xI5F99pHe3bJUiGA84LeqJ.W3DQ2FIAvC0QYmhnefeCXPuZsmSq",
+      "token": "f7c673d5-2fcb-4d1f-ab37-1859bfe1b7ec"
     }
   ]
 }

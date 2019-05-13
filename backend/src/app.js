@@ -11,7 +11,7 @@ const AuthController = require('./controllers/AuthController')(db);
 // Middlewares
 const ErrorMiddleware = require('./middlewares/ErrorMiddleware');
 
-server.listen(80);
+server.listen(8011);
 
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/index.html');
