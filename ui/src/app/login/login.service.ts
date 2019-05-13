@@ -13,7 +13,7 @@ export class LoginService {
   ) { }
 
   login(username: string, password: string) {
-    return this.httpClient.post('/auth/login', {
+    return this.httpClient.post('http://localhost:8011/auth/login', {
       username: username,
       password: password
     }).pipe(map((x: any) => { this.setToken(x.token) }));
@@ -29,7 +29,7 @@ export class LoginService {
   }
 
   register(username: string, password: string) {
-    return this.httpClient.post('/auth/register', {
+    return this.httpClient.post('http://localhost:8011/auth/register', {
       username: username,
       password: password
     });

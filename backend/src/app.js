@@ -2,6 +2,7 @@ const app = require('express')();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const db = require('./services/DatabaseConnection')();
 
@@ -18,6 +19,7 @@ app.get('/', function (req, res) {
 });
 
 app.use(bodyParser.json());
+app.use(cors());
 
 app.use('/auth', AuthController);
 
