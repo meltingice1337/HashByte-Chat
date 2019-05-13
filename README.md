@@ -7,6 +7,17 @@
 - `npm i -g nodemon`
 - set cwd to `backend/` and run `npm start`
 
+#### Technologies
+- NodeJS (environment for running javascript similar to JVR/JVM on desktop)  https://medium.freecodecamp.org/what-exactly-is-node-js-ae36e97449f5
+- npm (a package manager to install frameworks and libraries kind of like gradle or maven for java) https://docs.npmjs.com/about-npm/
+- Express (framework aka library for dealing with http requests used for loggin/register) https://expressjs.com/
+- Socket.IO (framework for dealing with websockets aka real time communication used for chat) https://socket.io/
+- lowdb (local database (kind of like a txt file) using the JSON format and without needing to run a server like mysql/mongo in order to work) https://github.com/typicode/lowdb
+- uuid (library used to generate random long unique identifiers used for creating tokens) https://github.com/kelektiv/node-uuid
+- bcrypt (library used to generate and verify password hashes) https://github.com/dcodeIO/bcrypt.js#readme
+- shortid (library used for creating id's used for identyfing database entities) https://github.com/dylang/shortid
+
+
 #### Database
 - the server uses `lowdb` as database, you don't need any external app to run it as it will be stored locally in the `database/db.json`
 
