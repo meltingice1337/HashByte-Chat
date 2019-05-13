@@ -1,0 +1,54 @@
+<div class="messaging">
+  <div class="nav-bar">
+    <button class="btn-logout" type="button"><i class="fa fa-power-off" (click)="logout()"
+        aria-hidden="true"></i></button>
+  </div>
+  <div class="inbox_msg">
+    <div class="inbox_people">
+      <div class="headind_srch">
+        <div class="recent_heading">
+          <h4>Users</h4>
+        </div>
+      </div>
+      <div class="inbox_chat scroll">
+        <div class="chat_list" *ngFor="let us of users">
+          <div class="chat_people">
+            <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+            <div class="chat_ib">
+              <h5>{{us}} </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mesgs">
+      <div class="msg_history">
+        <div *ngFor="let mes of messages">
+          <div class="incoming_msg" *ngIf="!mes.me">
+            <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
+            </div>
+            <div class="received_msg">
+              <div class="received_withd_msg">
+                <p>{{mes.msg}}</p>
+                <span class="time_date">{{mes.date | date:'HH:mm'}} | {{mes.username}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="outgoing_msg" *ngIf="mes.me">
+            <div class="sent_msg">
+              <p>{{mes.msg}}</p>
+              <span class="time_date"> {{mes.date | date:'HH:mm'}} | {{mes.username}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="type_msg">
+        <div class="input_msg_write">
+          <input (keyup)="isEnter($event)" [(ngModel)]="msg" type="text" class="write_msg" placeholder="Type a message" />
+          <button (click)="sendMsg()" class="msg_send_btn" type="button"><i class="fa fa-paper-plane"
+              aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

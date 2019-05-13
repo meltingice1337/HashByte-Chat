@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,700,500);
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html {
+  height: 100%;
+
+  body {
+    margin: 0px;
+    height: 100%;
+
+
+    width: 100%;
+    background-size: 600% 100%;
+    -webkit-animation: HeroBG 20s ease infinite;
+    animation: HeroBG 20s ease infinite;
+    font-family: 'Roboto', sans-serif;
+
+    app-root {
+      height: 100%;
+      display: block;
+
+      app-login,
+      app-dashboard {
+        height: 100%;
+        display: block;
+      }
+    }
+  }
+}
